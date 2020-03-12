@@ -15,10 +15,10 @@ class _HomeState extends State<Home> {
             FlatButton.icon(
               onPressed: () {
                 Navigator.pushNamed(context, "/location");
-              }, 
+              },
               icon: Icon(Icons.edit_location),
               label: Text('Edit Location'),
-              )
+            )
           ],
         ),
       ),
