@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class _HomeState extends State<Home> {
     print(data);
 
     return Scaffold(
+      backgroundColor: Colors.blue[300],
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
@@ -42,6 +44,10 @@ class _HomeState extends State<Home> {
                 style: TextStyle(
                   fontSize: 60,
                 ),
+              ),
+              SizedBox(height: 50),
+              SpinKitFadingCube(
+                color: Colors.white,
               )
             ],
           ),
