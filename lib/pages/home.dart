@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -15,7 +14,8 @@ class _HomeState extends State<Home> {
     print(data);
 
     return Scaffold(
-      backgroundColor: Colors.blue[300],
+      backgroundColor:
+          data['isDaytime'] ? Colors.blue[300] : Colors.indigo[900],
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
@@ -25,8 +25,14 @@ class _HomeState extends State<Home> {
                 onPressed: () {
                   Navigator.pushNamed(context, "/location");
                 },
-                icon: Icon(Icons.edit_location),
-                label: Text('Edit Location'),
+                icon: Icon(
+                  Icons.edit_location,
+                  color: Colors.white,
+                ),
+                label: Text(
+                  'Edit Location',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               SizedBox(height: 20),
               Row(
@@ -34,21 +40,16 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
                   Text(
                     data['location'],
-                    style: TextStyle(fontSize: 32, letterSpacing: 2.0),
+                    style: TextStyle(
+                        fontSize: 32, letterSpacing: 2.0, color: Colors.white),
                   )
                 ],
               ),
               SizedBox(height: 20),
               Text(
                 data['time'],
-                style: TextStyle(
-                  fontSize: 60,
-                ),
+                style: TextStyle(fontSize: 60, color: Colors.white),
               ),
-              SizedBox(height: 50),
-              SpinKitFadingCube(
-                color: Colors.white,
-              )
             ],
           ),
         ),
